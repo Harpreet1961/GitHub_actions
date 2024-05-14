@@ -20,9 +20,9 @@ jobs:
         run: echo "goodbye"
         shell: bash
       - uses: actions/checkout@v4
-      - name: hello action
-        run: echo "hello actions"
-        shell: bash
+      # - name: hello action
+      #   run: echo "hello actions"
+      #   shell: bash
        
   newjob:
     runs-on: ubuntu-latest
