@@ -16,6 +16,10 @@ jobs:
       - name: hello
         run: echo "Hello World from Harpreet"
         shell: bash
+      - name: goodbye
+        run: echo "goodbye"
+        shell: bash
+       
   newjob:
     runs-on: ubuntu-latest
     steps:
