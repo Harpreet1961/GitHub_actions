@@ -1,0 +1,22 @@
+name: Create a comment on Issues
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-with-action:
+   runs-on: ubuntu-latest
+   steps:
+      - name: "dump github context"
+        run: echo "Push by ${{ github.actor }}"
+        shell: bash
+
+  event-payload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump github event-payload
+        run: echo '${{ toJSON{ github.event } }}' | jq
+        shell: bash
+      
+
+
