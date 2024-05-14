@@ -16,7 +16,12 @@ jobs:
       - name: hello
         run: echo "Hello World from Harpreet"
         shell: bash
-
+  newjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: mkdir test.txt
+        shell: bash
     
 
 
