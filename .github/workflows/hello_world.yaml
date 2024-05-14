@@ -19,6 +19,10 @@ jobs:
       - name: goodbye
         run: echo "goodbye"
         shell: bash
+      - uses: ctions/checkout@v4
+      - name: hello action
+        run: echo "hello actions"
+        shell: bash
        
   newjob:
     runs-on: ubuntu-latest
