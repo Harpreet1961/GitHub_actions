@@ -33,6 +33,18 @@ jobs:
           reactions: '+1'  
 
 
+  # comment-issue:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+
+  #     - name: Comment with API
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       run: |
+  #         gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \ --field body="Me too"
+  
   comment-issue:
     runs-on: ubuntu-latest
     steps:
@@ -43,12 +55,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \ 
-           --field body='
-           This is multi line comment
-           from Harpreet
-           Singh.
-           '
+          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
+            -X POST \
+            -f body="This is a multi-line comment\n\nfrom Harpreet\n\nSingh."
+
 
      
     
