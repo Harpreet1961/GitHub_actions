@@ -43,7 +43,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments --field body="Me too"
+          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \ 
+          --field body='''\
+          This is multi line comment
+          from Harpreet
+          Singh.
+          '''
 
      
     
