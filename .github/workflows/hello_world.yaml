@@ -1,35 +1,35 @@
-name: Hello World Workflow
-on: 
-    push:
-      branches:
-         - main
-    pull_request:
-        branches:
-           - main
+# name: Hello World Workflow
+# on: 
+#     push:
+#       branches:
+#          - main
+#     pull_request:
+#         branches:
+#            - main
 
-    workflow_dispatch:
+#     workflow_dispatch:
 
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello
-        run: echo "Hello World from Harpreet"
-        shell: bash
-      - name: goodbye
-        run: echo "goodbye"
-        shell: bash
-      - uses: actions/checkout@v4
-      # - name: hello action
-      #   run: echo "hello actions"
-      #   shell: bash
+# jobs:
+#   hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: hello
+#         run: echo "Hello World from Harpreet"
+#         shell: bash
+#       - name: goodbye
+#         run: echo "goodbye"
+#         shell: bash
+#       - uses: actions/checkout@v4
+#       # - name: hello action
+#       #   run: echo "hello actions"
+#       #   shell: bash
        
-  newjob:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test
-        run: mkdir test.txt
-        shell: bash
+#   newjob:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: test
+#         run: mkdir test.txt
+#         shell: bash
     
 
 

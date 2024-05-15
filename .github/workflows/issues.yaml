@@ -30,7 +30,26 @@ jobs:
             - Created by [create-or-update-comment][1]
 
             [1]: https://github.com/peter-evans/create-or-update-comment
-          reactions: '+1'     
+          reactions: '+1'  
+
+
+  comment-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Comment with API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments --field body="Me too"
+
+     
+    
+        
+
+                    
       
 
 
