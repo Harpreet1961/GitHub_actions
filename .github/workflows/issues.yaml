@@ -58,14 +58,7 @@ jobs:
         run: |
           gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments \
             -X POST \
-            -f body="$(cat <<EOF
-              This is a multi-line comment
-
-               from Harpreet
- 
-                Singh.
-                 EOF
-                  )"
+            -f body="Testing for the Comment"
 
 
      
