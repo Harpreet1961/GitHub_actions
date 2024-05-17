@@ -79,7 +79,17 @@ jobs:
              -X PATCH
              -f body="Me Too"
           env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
+  List-comments:
+      runs-on: ubuntu-latest
+      steps:
+        - name: List comments
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: echo " Comment Id ${{ github.event.comment.id }} "
+          shell: bash
+      
 
      
     
