@@ -65,7 +65,7 @@ jobs:
       steps:
         - name: List the Issues with API
           run: |
-           gh api repos/${{ github.repository }}/issues/comments \
+           gh api repos/${{ github.repository }}/issues \
            -X GET 
            
           env:
