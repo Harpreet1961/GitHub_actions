@@ -65,7 +65,7 @@ jobs:
       steps:
         - name: List the Issues with API
           run: |
-             gh api repos/${{ github.repository }}/issues/comments \
+             gh api repos/${{ github.repository }}/issues \
              -X GET
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -83,11 +83,14 @@ jobs:
 
   List-comments:
       runs-on: ubuntu-latest
+      needs: ['comment-issue']
       steps:
+        - name: Checkout
+          uses: actions/checkout@v2
         - name: List comments
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: echo " Comment Id ${{ github.event.issues.comment.id }} "
+          run: echo " Comment Id ${{ github.event.comment.id }} "
           shell: bash
       
 
