@@ -90,7 +90,7 @@ jobs:
         - name: List comments
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: echo " Comment Id ${{ github.event.comment.id }} "
+          run: echo " Comment Id ${{ github.event.issue.comment.id }} "
           shell: bash
       
 
