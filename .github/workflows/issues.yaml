@@ -83,7 +83,7 @@ jobs:
 
   List-comments:
       runs-on: ubuntu-latest
-      needs: ['comment-issue','comment-with-action']
+      needs: ['comment-issue','event-payload']
       steps:
         - name: Checkout
           uses: actions/checkout@v2
